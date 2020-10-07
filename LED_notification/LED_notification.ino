@@ -15,12 +15,12 @@ void loop() {
   if(val == HIGH)
   {
     previousMillis = millis();
-    digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED on by making the voltage LOW
+    digitalWrite(LED_BUILTIN, HIGH);   // Turn the LED off by making the voltage HIGH
     Serial.println("Ok  - Captured ");
   }
   else if(val==LOW && currentMillis - previousMillis >= interval)
   {
-    digitalWrite(LED_BUILTIN, LOW);  // Turn the LED off by making the voltage HIGH
+    digitalWrite(LED_BUILTIN, LOW); // Turn the LED on by making the voltage LOW
     Serial.println("Not - Captured ");
   }
   delay(350);
