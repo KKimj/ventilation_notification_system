@@ -11,7 +11,6 @@ const cors = require('cors')  (  {
 
 
 exports.users = functions.https.onRequest( (request, response) =>{ 
-
     cors( request, response, ()=>
     {
         if(request.method === 'GET')
