@@ -25,6 +25,8 @@ void setup() {
   pinMode(D8, INPUT);
   pinMode(D1, OUTPUT);
   pinMode(A0, INPUT);
+  pinMode(D4, OUTPUT);
+  digitalWrite(D4, LOW);
   previousMillis = millis();
 }
 
@@ -38,7 +40,7 @@ void loop() {
     digitalWrite(LED_BUILTIN, HIGH);   // Turn the LED off by making the voltage HIGH
     Serial.println("Not - Captured ");
   }
-  else if(val==HIGH && ( currentMillis - previousMillis >= interval || getCo2()>110) )
+  else if(val==HIGH && ( currentMillis - previousMillis >= interval || getCo2()>105) )
   {
     digitalWrite(LED_BUILTIN, LOW); // Turn the LED on by making the voltage LOW
     sound_alarm();
